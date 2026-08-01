@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siemens Mobility | Connected Field Vision</title>
+    <style>
+      :root {
+        --bg: #07181a;
+        --bg-soft: #0d2326;
+        --panel: #112e33;
+        --line: #1b4950;
+        --text: #e8f4f4;
+        --muted: #a7c0c3;
+        --brand: #009999;
+        --brand-soft: #00b3b31f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 15% -5%, #12484d, transparent 35%),
+          radial-gradient(circle at 100% 0%, #0f3034, transparent 35%),
+          var(--bg);
+      }
+
+      .container {
+        width: min(1180px, 94vw);
+        margin: 1.5rem auto 2.25rem;
+      }
+
+      .hero {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: linear-gradient(145deg, #0f2a2f, #091c20);
+        box-shadow: 0 18px 42px #00000040;
+      }
+
+      .hero-media {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 5;
+        object-fit: cover;
+      }
+
+      .hero-copy {
+        padding: 1.2rem 1.3rem 1.4rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.4rem, 3vw, 2.4rem);
+        line-height: 1.15;
+      }
+
+      .subtitle {
+        margin: 0.65rem 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+        max-width: 980px;
+      }
+
+      .meta {
+        margin-top: 0.9rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.32rem 0.7rem;
+        font-size: 0.83rem;
+        background: #0d2d31;
+      }
+
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin-top: 1.15rem;
+      }
+
+      .tab-btn {
+        border: 1px solid var(--line);
+        background: #102b30;
+        color: var(--text);
+        padding: 0.52rem 0.78rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
+      .tab-btn:hover,
+      .tab-btn:focus-visible {
+        border-color: #33b6b6;
+        outline: none;
+      }
+
+      .tab-btn.active {
+        border-color: var(--brand);
+        background: linear-gradient(180deg, #0f3d40, #0f2f33);
+        box-shadow: inset 0 0 0 1px var(--brand-soft);
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        margin-top: 1rem;
+        background: #0a1f23;
+        overflow: hidden;
+      }
+
+      .panel-header {
+        padding: 1.05rem 1.2rem;
+        border-bottom: 1px solid var(--line);
+        background: #0f2b30;
+      }
+
+      .panel-header h2 {
+        margin: 0;
+        font-size: 1.34rem;
+      }
+
+      .panel-header p {
+        margin: 0.5rem 0 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .panel-media {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 4;
+        object-fit: cover;
+      }
+
+      .section {
+        padding: 1rem 1.2rem;
+        border-top: 1px solid #123940;
+      }
+
+      .section h3 {
+        margin: 0 0 0.5rem;
+        font-size: 0.94rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #d2f4f4;
+      }
+
+      .section p {
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      ul {
+        margin: 0.45rem 0 0;
+        padding-left: 1.15rem;
+        line-height: 1.55;
+      }
+
+      li {
+        margin-bottom: 0.3rem;
+      }
+
+      .grid {
+        margin-top: 0.6rem;
+        display: grid;
+        gap: 0.7rem;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--panel);
+        padding: 0.72rem;
+      }
+
+      .card b {
+        display: block;
+        margin-bottom: 0.24rem;
+      }
+
+      .cta-row {
+        margin-top: 1.2rem;
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        border-radius: 10px;
+        padding: 0.64rem 0.9rem;
+        text-decoration: none;
+        font-weight: 700;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: var(--brand);
+        color: #062629;
+      }
+
+      .btn-secondary {
+        border-color: var(--line);
+        color: #cde9e9;
+        background: #0e292d;
+      }
+
+      .footer-note {
+        margin-top: 0.95rem;
+        color: #8eaaad;
+        font-size: 0.86rem;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <img
+          class="hero-media"
+          src="assets/siemens-mobility-header.jpg"
+          alt="Siemens Mobility hero visual with modern rail transit"
+        />
+        <div class="hero-copy">
+          <h1>Siemens Mobility | Connected Field Vision</h1>
+          <p class="subtitle">
+            Executive discussion site for evolving Siemens Mobility's current
+            Service Cloud foundation into a connected field operating model that
+            removes spreadsheet-dependent workflows, increases technician
+            productivity, and strengthens warranty relationships with transit
+            customers.
+          </p>
+          <div class="meta">
+            <span class="pill">Primary Brand Color: #009999</span>
+            <span class="pill">Format: Single-file, no-build HTML</span>
+            <span class="pill">Audience: Siemens Mobility + Salesforce Team</span>
+          </div>
+          <nav class="tabs" role="tablist" aria-label="Vision tabs">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="overview">Connected Vision</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="v1">Vignette 1</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="v2">Vignette 2</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="v3">Vignette 3</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="v4">Vignette 4</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="v5">Vignette 5</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="capabilities">Capability Map</button>
+          </nav>
+        </div>
+      </header>
+
+      <section class="panel" data-panel="overview">
+        <div class="panel-header">
+          <h2>Connected Customer Vision</h2>
+          <p>
+            Preserve Siemens Mobility's existing Salesforce investment while
+            extending it with purpose-built capabilities for field execution,
+            asset lifecycle control, logistics coordination, and customer
+            transparency.
+          </p>
+        </div>
+        <img
+          class="panel-media"
+          src="assets/siemens-mobility-header.jpg"
+          alt="Siemens Mobility header visual"
+        />
+        <div class="section">
+          <h3>Executive Framing</h3>
+          <p>
+            This is an additive transformation. The current case framework
+            remains the foundation while Salesforce capabilities are configured
+            to resolve workflow conflicts, recover technician capacity, and
+            create an auditable field operations record that scales as new sites
+            open.
+          </p>
+        </div>
+        <div class="section">
+          <h3>Transformation Outcomes</h3>
+          <ul>
+            <li>Recover 2-3 productive technician hours per day through workflow automation.</li>
+            <li>Replace orphaned asset and part records with complete lifecycle traceability.</li>
+            <li>Separate field completion and logistics/RMA workflows to end case reopening cycles.</li>
+            <li>Move from CSV and email updates to real-time customer visibility through portal patterns.</li>
+            <li>Deliver operational dashboards that quantify value and support budget decisions.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Recommended Meeting CTA</h3>
+          <p>
+            Align on a 90-minute working session to map Siemens Mobility's
+            current implementation to a phased rollout plan: Phase 1 productivity
+            and process clarity, Phase 2 customer visibility and analytics,
+            Phase 3 AI-assisted field operations.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="v1" hidden>
+        <div class="panel-header">
+          <h2>Vignette 1 | The Half-Day Tax</h2>
+          <p>
+            Shift technicians from administrative overhead to field execution by
+            orchestrating work order, asset, and inventory workflows in a mobile
+            experience.
+          </p>
+        </div>
+        <img class="panel-media" src="assets/siemens-mobility-header.jpg" alt="Siemens Mobility rail visual" />
+        <div class="section">
+          <h3>Current-State Friction</h3>
+          <ul>
+            <li>Technicians spend roughly half the day on manual updates and spreadsheet lookups.</li>
+            <li>Inventory confidence is low because system values and physical reality drift apart.</li>
+            <li>Field completion is slowed by manual date/status entry and duplicate communication.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Salesforce Capability Activation</h3>
+          <div class="grid">
+            <div class="card"><b>Field Service Work Orders (FWO)</b> Structured field lifecycle and mobile execution.</div>
+            <div class="card"><b>Field Worker Mobility (FMO)</b> Asset context, guided steps, and completion capture on mobile.</div>
+            <div class="card"><b>Field Inventory & Replenishment (FIR)</b> Real-time parts consumption and stock accuracy.</div>
+            <div class="card"><b>Operational Schedule Management (FSM)</b> Optimized assignment based on skill/location.</div>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Executive Value Statement</h3>
+          <p>
+            Even a conservative productivity recovery creates the equivalent of
+            adding field capacity without additional hiring while improving first
+            response and resolution speed.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="v2" hidden>
+        <div class="panel-header">
+          <h2>Vignette 2 | The Asset That Nobody Owns</h2>
+          <p>
+            Replace fragmented asset and RMA tracking with one auditable record
+            for every component movement, revision, and vendor handoff.
+          </p>
+        </div>
+        <img class="panel-media" src="assets/siemens-mobility-header.jpg" alt="Siemens Mobility rail visual" />
+        <div class="section">
+          <h3>Current-State Friction</h3>
+          <ul>
+            <li>Parts move through vendor loops without consistent status and accountability.</li>
+            <li>Revision level history and field modifications are hard to reconstruct.</li>
+            <li>Lost-part risk and warranty exposure increase when records are incomplete.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Salesforce Capability Activation</h3>
+          <div class="grid">
+            <div class="card"><b>Asset Lifecycle Management (IMP)</b> Hierarchy from vehicle to sub-component.</div>
+            <div class="card"><b>RMA / Depot Repair (FDR)</b> Stage-driven vendor workflow and SLA checkpoints.</div>
+            <div class="card"><b>Install Base & Preventative Maintenance (FPM)</b> Service history and revision continuity.</div>
+            <div class="card"><b>Warranty Management (VWA)</b> Warranty evidence, claims traceability, and dispute readiness.</div>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Executive Value Statement</h3>
+          <p>
+            Asset intelligence becomes a strategic control point: better vendor
+            accountability, faster audits, and lower warranty liability across an
+            expanding fleet.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="v3" hidden>
+        <div class="panel-header">
+          <h2>Vignette 3 | The Case in Conflict</h2>
+          <p>
+            End field-versus-logistics collisions by separating workflows into
+            linked records with independent definitions of done.
+          </p>
+        </div>
+        <img class="panel-media" src="assets/siemens-mobility-header.jpg" alt="Siemens Mobility rail visual" />
+        <div class="section">
+          <h3>Current-State Friction</h3>
+          <ul>
+            <li>Field teams need case closure at customer completion; logistics needs continued tracking.</li>
+            <li>Records are repeatedly reopened, obscuring true operational status.</li>
+            <li>Related-case workarounds create complexity and inconsistent visibility.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Salesforce Capability Activation</h3>
+          <div class="grid">
+            <div class="card"><b>Incident Management (VCM + Process Design)</b> Separate work streams per operational objective.</div>
+            <div class="card"><b>Case Teaming (VTM)</b> Role-specific views with shared parent context.</div>
+            <div class="card"><b>RMA / Depot Repair (FDR)</b> Independent lifecycle for vendor loop completion.</div>
+            <div class="card"><b>Service Quality Analytics (VQL)</b> Distinct KPIs for field close and logistics throughput.</div>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Executive Value Statement</h3>
+          <p>
+            Process clarity removes structural conflict, improves cycle times,
+            and gives leadership a reliable picture of field completion versus
+            downstream logistics status.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="v4" hidden>
+        <div class="panel-header">
+          <h2>Vignette 4 | The Customer Who Doesn't Know</h2>
+          <p>
+            Convert manual CSV intake and email follow-up into real-time customer
+            visibility and structured digital collaboration.
+          </p>
+        </div>
+        <img class="panel-media" src="assets/siemens-mobility-header.jpg" alt="Siemens Mobility rail visual" />
+        <div class="section">
+          <h3>Current-State Friction</h3>
+          <ul>
+            <li>Customer requests require export/import and manual queue creation.</li>
+            <li>Status communication depends on ad-hoc email responses.</li>
+            <li>Warranty confidence erodes when updates are delayed or incomplete.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Salesforce Capability Activation</h3>
+          <div class="grid">
+            <div class="card"><b>Experience Cloud / Self-Service (VSS)</b> Customer portal for status and request submission.</div>
+            <div class="card"><b>Service Contract & Entitlements (VEN)</b> Warranty SLA alignment and obligations tracking.</div>
+            <div class="card"><b>Omni-Channel + Notification Flows (VCH)</b> Proactive, structured communication at status changes.</div>
+            <div class="card"><b>Operational Dashboards (FAP + ABI)</b> QBR-ready fleet health and at-risk repair visibility.</div>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Executive Value Statement</h3>
+          <p>
+            Transparency changes the commercial dynamic from reactive status
+            chasing to trusted partnership, supporting renewals and expansion.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="v5" hidden>
+        <div class="panel-header">
+          <h2>Vignette 5 | The Connected Field</h2>
+          <p>
+            Unify technicians, logistics, management, and customers on a single
+            operating model that preserves existing investment and scales without
+            disruption.
+          </p>
+        </div>
+        <img class="panel-media" src="assets/siemens-mobility-header.jpg" alt="Siemens Mobility rail visual" />
+        <div class="section">
+          <h3>Operating Model Principles</h3>
+          <ul>
+            <li>Additive architecture: existing case framework and history remain intact.</li>
+            <li>Scalable design: new sites inherit proven workflows and controls.</li>
+            <li>Evidence-based management: performance dashboards replace spreadsheet rollups.</li>
+            <li>AI is phase-two acceleration after operational foundations are in place.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Salesforce Capability Activation</h3>
+          <div class="grid">
+            <div class="card"><b>Platform Consolidation</b> Unified data model across service, field, asset, and customer domains.</div>
+            <div class="card"><b>Analytics & Reporting (ABI / FAP)</b> Site, technician, and warranty performance visibility.</div>
+            <div class="card"><b>Agentforce (DAG, optional next phase)</b> Summaries and recommendations once core workflows stabilize.</div>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Executive Value Statement</h3>
+          <p>
+            The spreadsheet ends and the platform begins: Siemens Mobility gains
+            a field operations system that can grow with demand and sustain
+            service quality at enterprise scale.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="capabilities" hidden>
+        <div class="panel-header">
+          <h2>Capability Map and Expansion Path</h2>
+          <p>
+            Recommended capability sequence to expand Siemens Mobility's
+            Salesforce footprint while preserving current deployment.
+          </p>
+        </div>
+        <img class="panel-media" src="assets/siemens-mobility-header.jpg" alt="Siemens Mobility rail visual" />
+        <div class="section">
+          <h3>Phase 1 | Productivity and Process Integrity</h3>
+          <ul>
+            <li>Field Service Work Orders, Mobility, and Inventory controls.</li>
+            <li>RMA lifecycle and logistics workflow separation.</li>
+            <li>Baseline operational dashboards for utilization and cycle-time tracking.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Phase 2 | Customer Visibility and Commercial Strength</h3>
+          <ul>
+            <li>Experience Cloud customer access and structured intake channels.</li>
+            <li>Entitlement and warranty SLA instrumentation.</li>
+            <li>QBR-facing fleet health reporting and proactive status communication.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Phase 3 | Scaled Intelligence</h3>
+          <ul>
+            <li>Cross-site performance benchmarking and exception automation.</li>
+            <li>Predictive maintenance and parts-consumption trend analysis.</li>
+            <li>Agentforce-assisted summarization and dispatch recommendations.</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Executive Next Step</h3>
+          <p>
+            Confirm capability ownership, entitlement alignment, and a phased
+            implementation timeline to support Siemens Mobility's next site
+            expansion cycle.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/afisher-salesforce/fieldsolutions" target="_blank" rel="noreferrer">Open Public Repository</a>
+            <a class="btn btn-secondary" href="https://ix.siemens.io/version-alpha/docs/styles/colors/" target="_blank" rel="noreferrer">Siemens Brand Reference</a>
+          </div>
+          <p class="footer-note">
+            Prepared for Siemens Mobility executive discussion with Salesforce
+            account team. All capability references are configurable within a
+            phased implementation approach.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        const buttons = document.querySelectorAll(".tab-btn");
+        const panels = document.querySelectorAll("[data-panel]");
+
+        function activate(tab) {
+          buttons.forEach((button) => {
+            const isActive = button.dataset.tab === tab;
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+
+          panels.forEach((panel) => {
+            panel.hidden = panel.dataset.panel !== tab;
+          });
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => activate(button.dataset.tab));
+        });
+      })();
+    </script>
+  </body>
+</html>
