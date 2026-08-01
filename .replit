@@ -36,3 +36,7 @@ externalPort = 80
 
 [postMerge]
 path = "scripts/post-merge.sh"
+
+[deployment]
+deploymentTarget = "static"
+publicDir = "."
