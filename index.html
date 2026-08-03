@@ -260,7 +260,7 @@
     </nav>
 
     <main class="container">
-      <header class="hero">
+      <header class="hero" id="site-hero">
         <img
           class="hero-media"
           src="assets/siemens-mobility-header.jpg"
@@ -750,6 +750,8 @@
         const buttons = document.querySelectorAll(".tab-btn");
         const panels = document.querySelectorAll("[data-panel]");
 
+        const hero = document.getElementById("site-hero");
+
         function activate(tab) {
           buttons.forEach((button) => {
             const isActive = button.dataset.tab === tab;
@@ -760,6 +762,8 @@
           panels.forEach((panel) => {
             panel.hidden = panel.dataset.panel !== tab;
           });
+
+          hero.hidden = tab !== "overview";
         }
 
         buttons.forEach((button) => {
