@@ -248,6 +248,13 @@
         line-height: 1.4;
       }
 
+      .cap-item--featured {
+        background: rgba(72, 240, 200, 0.07);
+        border-color: #48F0C8;
+        color: #7AF5DC;
+        font-weight: 600;
+      }
+
       [hidden] {
         display: none !important;
       }
@@ -566,9 +573,8 @@
         <div class="panel-header">
           <h2>Salesforce Platform Capabilities</h2>
           <p>
-            Full capability portfolio across the Salesforce platform, organized by
-            functional domain. Capabilities relevant to the Siemens Mobility engagement
-            are referenced with their engagement codes in the vignette tabs.
+            Full capability portfolio across the Salesforce platform, organized by functional domain.
+            <span style="color:#7AF5DC;font-weight:600;">Highlighted capabilities</span> are referenced in the Siemens Mobility vignettes.
           </p>
         </div>
         <div class="section">
@@ -577,186 +583,181 @@
             <div class="cap-group">
               <p class="cap-group-title">Field Service</p>
               <ul class="cap-list">
-                <li class="cap-item">FAP: Field Service Analysis &amp; Planning</li>
-                <li class="cap-item">FDR: RMA / Depot Repair</li>
-                <li class="cap-item">FIR: Field Inventory &amp; Replenishment Management</li>
-                <li class="cap-item">FMO: Field Worker Mobility</li>
-                <li class="cap-item">FPM: Install Base &amp; Preventative Maintenance</li>
-                <li class="cap-item">Resource Management</li>
-                <li class="cap-item">FSM: Operational Schedule Management</li>
-                <li class="cap-item">FWO: Work Order Management</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Unified Agent Experience</p>
-              <ul class="cap-list">
-                <li class="cap-item">VCH: Omni-Channel Contact Center</li>
-                <li class="cap-item">VCM: Case Management</li>
-                <li class="cap-item">VEN: Service Contract Management &amp; Entitlement</li>
-                <li class="cap-item">Knowledge Management</li>
-                <li class="cap-item">Training &amp; Onboarding</li>
-                <li class="cap-item">Remote Monitoring &amp; Proactive Service</li>
-                <li class="cap-item">VQL: Service Quality &amp; Supervision Analytics</li>
-                <li class="cap-item">VSS: Self Service</li>
-                <li class="cap-item">Feedback / Surveys / VOC</li>
-                <li class="cap-item">VTM: Case Teaming</li>
-                <li class="cap-item">VWA: Warranty Management</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Data &amp; Artificial Intelligence</p>
-              <ul class="cap-list">
-                <li class="cap-item">DAG: Agentic AI / Autonomous Agents</li>
-                <li class="cap-item">Data Harmonization</li>
-                <li class="cap-item">Einstein Trust Layer</li>
-                <li class="cap-item">Flex Credit &amp; AI Consumption Management</li>
-                <li class="cap-item">Generative AI Orchestration</li>
-                <li class="cap-item">Identity Resolution</li>
-                <li class="cap-item">Predictive AI / Einstein Scoring</li>
-                <li class="cap-item">Unified Customer Profile</li>
-                <li class="cap-item">Vector Search &amp; RAG Grounding</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Analytics &amp; Reporting</p>
-              <ul class="cap-list">
-                <li class="cap-item">ABI: Embedded BI &amp; Dashboards</li>
-                <li class="cap-item">Einstein Conversation Insights</li>
-                <li class="cap-item">Proactive Insights</li>
-                <li class="cap-item">Pipeline Health</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Sales</p>
-              <ul class="cap-list">
-                <li class="cap-item">Account Management</li>
-                <li class="cap-item">Contract Lifecycle Management</li>
-                <li class="cap-item">Contact Management</li>
-                <li class="cap-item">Compensation Management</li>
-                <li class="cap-item">Cross / Up-Sell Management</li>
-                <li class="cap-item">Deal Support Requests</li>
-                <li class="cap-item">Sales Enablement</li>
-                <li class="cap-item">Guided Solution Selling</li>
-                <li class="cap-item">Inside Sales Management</li>
-                <li class="cap-item">Lead Management</li>
-                <li class="cap-item">Opportunity Management</li>
-                <li class="cap-item">Product Management (Basic)</li>
-                <li class="cap-item">Sales Analytics</li>
-                <li class="cap-item">Sales Performance Management</li>
-                <li class="cap-item">Territory Management</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Configure-Price-Quote (CPQ)</p>
-              <ul class="cap-list">
-                <li class="cap-item">Product Catalog Management</li>
-                <li class="cap-item">Proposal Management</li>
-                <li class="cap-item">Pricing Management</li>
-                <li class="cap-item">Quote Management</li>
-                <li class="cap-item">Guided Solution Selling</li>
-                <li class="cap-item">Subscription Management</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Marketing</p>
-              <ul class="cap-list">
-                <li class="cap-item">Audience Segmentation &amp; Activation</li>
-                <li class="cap-item">Content Management</li>
-                <li class="cap-item">Direct Marketing (owned)</li>
-                <li class="cap-item">Journey Management</li>
-                <li class="cap-item">Lead Generation</li>
-                <li class="cap-item">Marketing Analytics</li>
-                <li class="cap-item">Paid Marketing (ads)</li>
-                <li class="cap-item">Preference &amp; Privacy Management</li>
-                <li class="cap-item">Marketing Strategy &amp; Planning</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Order Management</p>
-              <ul class="cap-list">
-                <li class="cap-item">Assisted Sales &amp; Service</li>
-                <li class="cap-item">Order Capture</li>
-                <li class="cap-item">Commerce Self Service</li>
-                <li class="cap-item">Inventory Management</li>
-                <li class="cap-item">Promotion Management</li>
-                <li class="cap-item">Recommendations &amp; Experience</li>
-                <li class="cap-item">Order Management</li>
-                <li class="cap-item">Search / Merchandising</li>
-                <li class="cap-item">Shipping &amp; Payment Methods</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Billing</p>
-              <ul class="cap-list">
-                <li class="cap-item">Credit &amp; Collections</li>
-                <li class="cap-item">Invoice Management</li>
-                <li class="cap-item">Billing Management</li>
-                <li class="cap-item">Revenue Recognition</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Industry Solutions</p>
-              <ul class="cap-list">
-                <li class="cap-item">Industry Rules Engine</li>
-                <li class="cap-item">Digital Engagement &amp; Self-Service (Industry)</li>
-                <li class="cap-item">IMP: Asset Lifecycle Management</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Integration</p>
-              <ul class="cap-list">
-                <li class="cap-item">Agent-to-Agent Orchestration</li>
-                <li class="cap-item">API Management</li>
-                <li class="cap-item">Enterprise Integration</li>
-                <li class="cap-item">Enterprise Platform Connectors</li>
-                <li class="cap-item">Microsoft Ecosystem Integration</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Collaboration</p>
-              <ul class="cap-list">
-                <li class="cap-item">Agentforce in Slack</li>
-                <li class="cap-item">External Collaboration</li>
-                <li class="cap-item">Asynchronous Collaboration</li>
-              </ul>
-            </div>
-
-            <div class="cap-group">
-              <p class="cap-group-title">Partner Management</p>
-              <ul class="cap-list">
-                <li class="cap-item">Partner Development &amp; Growth</li>
-                <li class="cap-item">Joint Partner Marketing</li>
-                <li class="cap-item">Partner Order Management</li>
-                <li class="cap-item">Partner Recruitment &amp; Onboarding</li>
-                <li class="cap-item">Partner Sales Management</li>
-                <li class="cap-item">Partner Service Management</li>
+                <li class="cap-item cap-item--featured">FAP: Field Service Analysis &amp; Planning</li>
+                <li class="cap-item cap-item--featured">FDR: RMA / Depot Repair</li>
+                <li class="cap-item cap-item--featured">FIR: Field Inventory &amp; Replenishment Management</li>
+                <li class="cap-item cap-item--featured">FMO: Field Worker Mobility</li>
+                <li class="cap-item cap-item--featured">FPM: Install Base &amp; Preventative Maintenance</li>
+                <li class="cap-item">FRM: Resource Management</li>
+                <li class="cap-item cap-item--featured">FSM: Operational Schedule Management</li>
+                <li class="cap-item cap-item--featured">FWO: Work Order Management</li>
               </ul>
             </div>
 
             <div class="cap-group">
               <p class="cap-group-title">Service</p>
               <ul class="cap-list">
-                <li class="cap-item">Predictive Service</li>
+                <li class="cap-item">VAI: Predictive Service</li>
+                <li class="cap-item">VAX: Unified Agent Experience</li>
+                <li class="cap-item cap-item--featured">VCH: Omni-Channel Contact Center</li>
+                <li class="cap-item cap-item--featured">VCM: Case Management</li>
+                <li class="cap-item cap-item--featured">VEN: Service Contract Management &amp; Entitlement</li>
+                <li class="cap-item">VKB: Knowledge Management</li>
+                <li class="cap-item">VLN: Training &amp; Onboarding</li>
+                <li class="cap-item">VPR: Remote Monitoring &amp; Proactive Service</li>
+                <li class="cap-item cap-item--featured">VQL: Service Quality &amp; Supervision Analytics</li>
+                <li class="cap-item cap-item--featured">VSS: Self Service</li>
+                <li class="cap-item">VSV: Feedback / Surveys / VOC</li>
+                <li class="cap-item cap-item--featured">VTM: Case Teaming</li>
+                <li class="cap-item cap-item--featured">VWA: Warranty Management</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Data &amp; Artificial Intelligence</p>
+              <ul class="cap-list">
+                <li class="cap-item cap-item--featured">DAG: Agentic AI / Autonomous Agents</li>
+                <li class="cap-item">DDH: Data Harmonization</li>
+                <li class="cap-item">DEL: Einstein Trust Layer</li>
+                <li class="cap-item">DFC: Flex Credit &amp; AI Consumption Management</li>
+                <li class="cap-item">DGA: Generative AI Orchestration</li>
+                <li class="cap-item">DIR: Identity Resolution</li>
+                <li class="cap-item">DPA: Predictive AI / Einstein Scoring</li>
+                <li class="cap-item">DUP: Unified Customer Profile</li>
+                <li class="cap-item">DVS: Vector Search &amp; RAG Grounding</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Analytics &amp; Reporting</p>
+              <ul class="cap-list">
+                <li class="cap-item cap-item--featured">ABI: Embedded BI &amp; Dashboards</li>
+                <li class="cap-item">AEX: Einstein Conversation Insights (ECI)</li>
+                <li class="cap-item">APC: Tableau Pulse / Proactive Insights</li>
+                <li class="cap-item">ARI: Revenue Intelligence</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Industry Solutions</p>
+              <ul class="cap-list">
+                <li class="cap-item">ICR: Industry Rules Engine</li>
+                <li class="cap-item">IDI: Digital Engagement &amp; Self-Service (Industry)</li>
+                <li class="cap-item cap-item--featured">IMP: Manufacturing &amp; Asset Lifecycle Management</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Sales</p>
+              <ul class="cap-list">
+                <li class="cap-item">SAM: Account Management</li>
+                <li class="cap-item">SCL: Contract Lifecycle Management</li>
+                <li class="cap-item">SCM: Contact Management</li>
+                <li class="cap-item">SCP: Compensation Management</li>
+                <li class="cap-item">SCU: Cross / Up-Sell Management</li>
+                <li class="cap-item">SDS: Deal Support Requests</li>
+                <li class="cap-item">SEM: Sales Enablement</li>
+                <li class="cap-item">SGS: Guided Solution Selling</li>
+                <li class="cap-item">SIS: Inside Sales Management</li>
+                <li class="cap-item">SLM: Lead Management</li>
+                <li class="cap-item">SOP: Opportunity Management</li>
+                <li class="cap-item">SPR: Product Management (Basic)</li>
+                <li class="cap-item">SSA: Sales Analytics</li>
+                <li class="cap-item">SSP: Sales Performance Management</li>
+                <li class="cap-item">STM: Territory Management</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Configure-Price-Quote (CPQ)</p>
+              <ul class="cap-list">
+                <li class="cap-item">CCM: Product Catalog Management</li>
+                <li class="cap-item">CPL: Proposal Management</li>
+                <li class="cap-item">CPM: Pricing Management</li>
+                <li class="cap-item">CQM: Quote Management</li>
+                <li class="cap-item">CSC: Guided Solution Configuration</li>
+                <li class="cap-item">CSM: Subscription Management</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Marketing</p>
+              <ul class="cap-list">
+                <li class="cap-item">MAS: Audience Segmentation &amp; Activation</li>
+                <li class="cap-item">MCN: Content Management</li>
+                <li class="cap-item">MDI: Direct Marketing (owned)</li>
+                <li class="cap-item">MJM: Journey Management</li>
+                <li class="cap-item">MLG: Lead Generation</li>
+                <li class="cap-item">MMA: Marketing Analytics</li>
+                <li class="cap-item">MPA: Paid Marketing (ads)</li>
+                <li class="cap-item">MPV: Preference &amp; Privacy Management</li>
+                <li class="cap-item">MSP: Marketing Strategy &amp; Planning</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Order Management</p>
+              <ul class="cap-list">
+                <li class="cap-item">OAS: Assisted Sales &amp; Service</li>
+                <li class="cap-item">OCP: Order Capture</li>
+                <li class="cap-item">OCS: Commerce Self Service</li>
+                <li class="cap-item">OIM: Inventory Management</li>
+                <li class="cap-item">OPM: Promotion Management</li>
+                <li class="cap-item">ORE: Recommendations &amp; Experience</li>
+                <li class="cap-item">ORM: Order Management</li>
+                <li class="cap-item">OSM: Search / Merchandising</li>
+                <li class="cap-item">OSP: Shipping &amp; Payment Methods</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Billing</p>
+              <ul class="cap-list">
+                <li class="cap-item">BCC: Credit &amp; Collections</li>
+                <li class="cap-item">BIM: Invoice Management</li>
+                <li class="cap-item">BLL: Billing Management</li>
+                <li class="cap-item">BRR: Revenue Recognition</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Integration</p>
+              <ul class="cap-list">
+                <li class="cap-item">IAF: Agent-to-Agent (A2A) Orchestration</li>
+                <li class="cap-item">IAM: API Management</li>
+                <li class="cap-item">IEI: Enterprise Integration</li>
+                <li class="cap-item">IEP: Enterprise Platform Connectors</li>
+                <li class="cap-item">IMS: Microsoft Ecosystem Integration</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Collaboration</p>
+              <ul class="cap-list">
+                <li class="cap-item">CAF: Agentforce in Slack</li>
+                <li class="cap-item">CSC: Slack Connect / External Collaboration</li>
+                <li class="cap-item">CTC: Asynchronous Team Collaboration</li>
+              </ul>
+            </div>
+
+            <div class="cap-group">
+              <p class="cap-group-title">Partner Management</p>
+              <ul class="cap-list">
+                <li class="cap-item">PDG: Partner Development &amp; Growth</li>
+                <li class="cap-item">PJM: Joint Partner Marketing</li>
+                <li class="cap-item">POM: Partner Order Management</li>
+                <li class="cap-item">PRO: Partner Recruitment &amp; Onboarding</li>
+                <li class="cap-item">PSM: Partner Sales Management</li>
+                <li class="cap-item">PVM: Partner Service Management</li>
               </ul>
             </div>
 
             <div class="cap-group">
               <p class="cap-group-title">Platform &amp; Governance</p>
               <ul class="cap-list">
-                <li class="cap-item">Data Governance &amp; Privacy</li>
-                <li class="cap-item">Multi-Org / Subsidiary Architecture</li>
-                <li class="cap-item">Net Zero / Sustainability Management</li>
+                <li class="cap-item">PGV: Data Governance &amp; Privacy</li>
+                <li class="cap-item">PMD: Multi-Org / Subsidiary Architecture</li>
+                <li class="cap-item">PNZ: Net Zero / Sustainability Management</li>
               </ul>
             </div>
 
