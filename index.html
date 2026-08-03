@@ -30,6 +30,22 @@
           var(--bg);
       }
 
+      /* ── Sub-nav title strip ── */
+      .page-title-bar {
+        background: #07181a;
+        border-bottom: 1px solid var(--line);
+        padding: 0.6rem 0;
+      }
+
+      .page-title-bar-inner {
+        width: min(1180px, 94vw);
+        margin: 0 auto;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #cde9e9;
+        letter-spacing: 0.01em;
+      }
+
       /* ── Top navigation bar ── */
       .sitenav {
         position: sticky;
@@ -258,6 +274,10 @@
         <button class="tab-btn" role="tab" aria-selected="false" data-tab="salesforce">Salesforce</button>
       </div>
     </nav>
+
+    <div class="page-title-bar" id="page-title-bar" hidden>
+      <div class="page-title-bar-inner">Siemens Mobility | Connected Field Vision</div>
+    </div>
 
     <main class="container">
       <header class="hero" id="site-hero">
@@ -751,6 +771,7 @@
         const panels = document.querySelectorAll("[data-panel]");
 
         const hero = document.getElementById("site-hero");
+        const titleBar = document.getElementById("page-title-bar");
 
         function activate(tab) {
           buttons.forEach((button) => {
@@ -763,7 +784,9 @@
             panel.hidden = panel.dataset.panel !== tab;
           });
 
-          hero.hidden = tab !== "overview";
+          const isOverview = tab === "overview";
+          hero.hidden = !isOverview;
+          titleBar.hidden = isOverview;
         }
 
         buttons.forEach((button) => {
