@@ -18,6 +18,19 @@ const capabilityIndex = [
   ["DAG", "Agentic AI / Autonomous Agents", "5. The Connected Field", "vignette-5.html"],
   ["PGV", "Data Governance & Privacy", "5. The Connected Field", "vignette-5.html"]
 ];
+const pageFlow = [
+  ["index.html", "Executive Summary"],
+  ["journey.html", "Journey"],
+  ["vignette-1.html", "1. The Half-Day Tax"],
+  ["vignette-2.html", "2. The Asset That Nobody Owns"],
+  ["vignette-3.html", "3. The Case in Conflict"],
+  ["vignette-4.html", "4. The Customer Who Doesn't Know"],
+  ["vignette-5.html", "5. The Connected Field"],
+  ["capability-map.html", "Capability Map & Sequencing"],
+  ["salesforce-domains.html", "Salesforce Capability Domains"],
+  ["external-research.html", "External Research"],
+  ["forward-looking.html", "Forward Looking Statement"]
+];
 
 function initSite(activePath) {
   const layout = document.querySelector(".layout");
@@ -64,4 +77,19 @@ function initSite(activePath) {
       .map(([code, name, pageTitle, pageHref]) => `<a class="result-link" href="${pageHref}">${code}: ${name} (${pageTitle})</a>`)
       .join("");
   });
+
+  const currentIndex = pageFlow.findIndex(([href]) => href === activePath);
+  if (currentIndex !== -1) {
+    const prev = pageFlow[currentIndex - 1] || null;
+    const next = pageFlow[currentIndex + 1] || null;
+    const content = document.querySelector(".content");
+    const nav = document.createElement("nav");
+    nav.className = "page-flow";
+    nav.setAttribute("aria-label", "Page progression");
+    nav.innerHTML = `
+      ${prev ? `<a class="page-flow-link prev" href="${prev[0]}"><span>Previous</span><b>${prev[1]}</b></a>` : "<div></div>"}
+      ${next ? `<a class="page-flow-link next" href="${next[0]}"><span>Next</span><b>${next[1]}</b></a>` : "<div></div>"}
+    `;
+    content.appendChild(nav);
+  }
 }

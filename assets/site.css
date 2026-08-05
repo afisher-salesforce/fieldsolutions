@@ -161,6 +161,33 @@ li { margin-bottom: 0.3rem; }
   padding: 0.62rem;
 }
 .cap-item b { display: block; margin-bottom: 0.2rem; }
+.page-flow {
+  margin-top: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+.page-flow-link {
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0f2c31;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.6rem 0.75rem;
+  line-height: 1.4;
+}
+.page-flow-link.next { text-align: right; }
+.page-flow-link span {
+  display: block;
+  color: #94b5b9;
+  font-size: 0.78rem;
+}
+.page-flow-link b {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.9rem;
+}
 .journey-image {
   width: 100%;
   display: block;
@@ -180,6 +207,10 @@ li { margin-bottom: 0.3rem; }
   .layout { grid-template-columns: 1fr; }
   .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
   .layout.nav-collapsed { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .page-flow { flex-direction: column; }
+  .page-flow-link.next { text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
