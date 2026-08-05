@@ -254,6 +254,31 @@ li { margin-bottom: 0.3rem; }
   background: #0f2c31;
   padding: 0.65rem;
 }
+.cap-tag {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: 1px solid transparent;
+}
+.cap-tag.now {
+  background: #0f4338;
+  border-color: #3fcfa7;
+  color: #8ff0d0;
+}
+.cap-tag.next {
+  background: #123846;
+  border-color: #4ab9e6;
+  color: #8bd9f5;
+}
+.cap-tag.adjacent {
+  background: #2f2b1b;
+  border-color: #d8c06e;
+  color: #f0dea2;
+}
 .phase-card b {
   display: block;
   margin-bottom: 0.24rem;
