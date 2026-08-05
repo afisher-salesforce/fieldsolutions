@@ -279,6 +279,18 @@ li { margin-bottom: 0.3rem; }
   border-color: #d8c06e;
   color: #f0dea2;
 }
+.tag-legend {
+  margin-top: 0.62rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.tag-legend-note {
+  color: #9ab9bc;
+  font-size: 0.86rem;
+  margin-left: 0.1rem;
+}
 .phase-card b {
   display: block;
   margin-bottom: 0.24rem;
