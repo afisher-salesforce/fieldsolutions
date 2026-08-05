@@ -81,19 +81,26 @@ body {
 .nav-link {
   display: block;
   width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #102d32;
-  color: var(--text);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #c7dde0;
   text-align: left;
-  padding: 0.43rem 0.58rem;
-  margin-bottom: 0.35rem;
+  padding: 0.34rem 0 0.34rem 0.62rem;
+  margin-bottom: 0.2rem;
   text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #e9f5f6;
+  outline: none;
 }
 .nav-link.active {
-  border-color: var(--brand);
-  background: linear-gradient(180deg, #0f3b40, #112f34);
-  box-shadow: inset 0 0 0 1px var(--brand-soft);
+  color: #f0fcfc;
+  border-left-color: var(--brand);
+  font-weight: 700;
 }
 .sidebar-logo-wrap {
   margin-top: 0.9rem;
@@ -212,16 +219,31 @@ li { margin-bottom: 0.3rem; }
   border: 1px solid var(--line);
   border-radius: 12px;
 }
-.layout.nav-collapsed { grid-template-columns: 74px 1fr; }
-.layout.nav-collapsed .sidebar { width: 74px; padding: 1rem 0.45rem; }
+.layout.nav-collapsed { grid-template-columns: 170px 1fr; }
+.layout.nav-collapsed .sidebar { width: 170px; padding: 1rem 0.55rem; }
 .layout.nav-collapsed .sidebar h1,
 .layout.nav-collapsed .sidebar p,
 .layout.nav-collapsed .sidebar .sidebar-logo-wrap,
 .layout.nav-collapsed .group-label,
 .layout.nav-collapsed .search-wrap,
 .layout.nav-collapsed .nav-link span { display: none; }
-.layout.nav-collapsed .toggle-nav { font-size: 0.78rem; padding: 0.42rem; }
-.layout.nav-collapsed .nav-link { text-align: center; padding: 0.45rem 0.2rem; }
+.layout.nav-collapsed .nav-link { display: none; }
+.layout.nav-collapsed .sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+.layout.nav-collapsed .toggle-nav {
+  font-size: 0.78rem;
+  padding: 0.48rem 0.52rem;
+  white-space: nowrap;
+}
+@media (max-width: 980px) {
+  .layout.nav-collapsed .sidebar {
+    align-items: flex-start;
+  }
+}
 @media (max-width: 980px) {
   .layout { grid-template-columns: 1fr; }
   .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
