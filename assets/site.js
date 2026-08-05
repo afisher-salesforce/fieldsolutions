@@ -18,6 +18,8 @@ const capabilityIndex = [
   ["DAG", "Agentic AI / Autonomous Agents", "5. The Connected Field", "vignette-5.html"],
   ["PGV", "Data Governance & Privacy", "5. The Connected Field", "vignette-5.html"]
 ];
+const defaultCustomerName = "Customer Name";
+const sidebarLogoPath = "assets/salesforce-logo.png";
 const pageFlow = [
   ["index.html", "Executive Summary"],
   ["journey.html", "Journey"],
@@ -35,6 +37,32 @@ const pageFlow = [
 function initSite(activePath) {
   const layout = document.querySelector(".layout");
   const toggle = document.getElementById("toggleNav");
+  const sidebar = document.querySelector(".sidebar");
+  const existingHeader = sidebar.querySelector("h1");
+  const customerName =
+    document.body.getAttribute("data-customer-name") ||
+    (existingHeader ? existingHeader.textContent.trim() : "") ||
+    defaultCustomerName;
+
+  // Enforce customer-specific title in the upper-left of navigation.
+  let customerNameNode = sidebar.querySelector(".customer-name") || existingHeader;
+  if (!customerNameNode) {
+    customerNameNode = document.createElement("h1");
+    customerNameNode.className = "customer-name";
+    sidebar.insertBefore(customerNameNode, sidebar.firstChild);
+  }
+  customerNameNode.classList.add("customer-name");
+  customerNameNode.textContent = customerName;
+
+  // Enforce persistent Salesforce logo footer under final nav item.
+  let logoWrap = sidebar.querySelector(".sidebar-logo-wrap");
+  if (!logoWrap) {
+    logoWrap = document.createElement("div");
+    logoWrap.className = "sidebar-logo-wrap";
+    logoWrap.innerHTML = `<img class="sidebar-logo" src="${sidebarLogoPath}" alt="Salesforce logo" />`;
+    sidebar.appendChild(logoWrap);
+  }
+
   const collapsed = localStorage.getItem("ccv-nav-collapsed") === "true";
   if (collapsed) {
     layout.classList.add("nav-collapsed");

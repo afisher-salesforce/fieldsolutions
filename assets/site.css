@@ -31,6 +31,10 @@ body {
   height: 100vh;
   overflow-y: auto;
 }
+.customer-name {
+  margin: 0;
+  font-size: 1.05rem;
+}
 .sidebar h1 { margin: 0; font-size: 1.05rem; }
 .sidebar p { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.85rem; }
 .toggle-nav {
@@ -90,6 +94,20 @@ body {
   border-color: var(--brand);
   background: linear-gradient(180deg, #0f3b40, #112f34);
   box-shadow: inset 0 0 0 1px var(--brand-soft);
+}
+.sidebar-logo-wrap {
+  margin-top: 0.9rem;
+  border-top: 1px solid #18454c;
+  padding-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+.sidebar-logo {
+  max-width: 130px;
+  width: 74%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 .content { padding: 1.3rem; }
 .hero {
@@ -198,6 +216,7 @@ li { margin-bottom: 0.3rem; }
 .layout.nav-collapsed .sidebar { width: 74px; padding: 1rem 0.45rem; }
 .layout.nav-collapsed .sidebar h1,
 .layout.nav-collapsed .sidebar p,
+.layout.nav-collapsed .sidebar .sidebar-logo-wrap,
 .layout.nav-collapsed .group-label,
 .layout.nav-collapsed .search-wrap,
 .layout.nav-collapsed .nav-link span { display: none; }
