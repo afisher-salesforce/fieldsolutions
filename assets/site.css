@@ -193,6 +193,16 @@ body {
   color: #d2f2f4;
 }
 .section p { margin: 0; line-height: 1.58; }
+.legal-section {
+  background: #0c252a;
+}
+.legal-copy {
+  max-width: 88ch;
+  color: #d7e8ea;
+  font-size: 0.98rem;
+  line-height: 1.74;
+  letter-spacing: 0.004em;
+}
 ul { margin: 0.4rem 0 0; padding-left: 1.15rem; line-height: 1.55; }
 li { margin-bottom: 0.3rem; }
 .cap-list { display: grid; gap: 0.55rem; margin-top: 0.5rem; }
