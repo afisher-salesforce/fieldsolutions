@@ -84,6 +84,10 @@ function initSite(activePath) {
 
   const searchInput = document.getElementById("capabilitySearch");
   const resultsNode = document.getElementById("searchResults");
+  if (searchInput && !searchInput.getAttribute("data-placeholder-set")) {
+    searchInput.placeholder = "Try FWO, Asset Lifecycle Management, Dashboard...";
+    searchInput.setAttribute("data-placeholder-set", "true");
+  }
   searchInput.addEventListener("input", () => {
     const q = searchInput.value.trim().toLowerCase();
     if (!q) {

@@ -201,6 +201,8 @@ li { margin-bottom: 0.3rem; }
   border-radius: 10px;
   background: var(--panel);
   padding: 0.62rem;
+  box-shadow: 0 6px 16px #0000001a;
+  transition: transform 140ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 .cap-item b { display: block; margin-bottom: 0.2rem; }
 .domain-grid {
@@ -214,6 +216,8 @@ li { margin-bottom: 0.3rem; }
   border-radius: 10px;
   background: #0e2930;
   padding: 0.7rem;
+  box-shadow: 0 8px 18px #0000001c;
+  transition: transform 140ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 .domain-card h5 {
   margin: 0;
@@ -253,6 +257,8 @@ li { margin-bottom: 0.3rem; }
   border-radius: 10px;
   background: #0f2c31;
   padding: 0.65rem;
+  box-shadow: 0 8px 18px #0000001f;
+  transition: transform 140ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 .cap-tag {
   display: inline-block;
@@ -299,6 +305,13 @@ li { margin-bottom: 0.3rem; }
   color: #a8c4c7;
   font-size: 0.92rem;
   line-height: 1.42;
+}
+.phase-card:hover,
+.domain-card:hover,
+.cap-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px #0000002b;
+  border-color: #2d727b;
 }
 .page-flow {
   margin-top: 0.95rem;
