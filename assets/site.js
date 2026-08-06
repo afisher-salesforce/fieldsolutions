@@ -38,6 +38,12 @@ function initSite(activePath) {
   const layout = document.querySelector(".layout");
   const toggle = document.getElementById("toggleNav");
   const sidebar = document.querySelector(".sidebar");
+  if (!layout || !toggle || !sidebar) return;
+
+  // Keep nav toggle outside the collapsible rail so it remains usable in all states.
+  if (toggle.parentElement !== document.body) {
+    document.body.appendChild(toggle);
+  }
   const existingHeader = sidebar.querySelector("h1");
   const customerName =
     document.body.getAttribute("data-customer-name") ||
@@ -63,17 +69,18 @@ function initSite(activePath) {
     sidebar.appendChild(logoWrap);
   }
 
+  const setToggleState = (collapsed) => {
+    layout.classList.toggle("nav-collapsed", collapsed);
+    toggle.textContent = collapsed ? "Show Navigation" : "Hide Navigation";
+  };
+
   const collapsed = localStorage.getItem("ccv-nav-collapsed") === "true";
-  if (collapsed) {
-    layout.classList.add("nav-collapsed");
-    toggle.textContent = "Show Navigation";
-  }
+  setToggleState(collapsed);
 
   toggle.addEventListener("click", () => {
-    layout.classList.toggle("nav-collapsed");
-    const isCollapsed = layout.classList.contains("nav-collapsed");
+    const isCollapsed = !layout.classList.contains("nav-collapsed");
+    setToggleState(isCollapsed);
     localStorage.setItem("ccv-nav-collapsed", isCollapsed ? "true" : "false");
-    toggle.textContent = isCollapsed ? "Show Navigation" : "Hide Navigation";
   });
 
   document.querySelectorAll(".nav-link").forEach((link) => {
