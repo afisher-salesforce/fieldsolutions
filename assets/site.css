@@ -110,15 +110,18 @@ body {
   font-weight: 700;
 }
 .sidebar-logo-wrap {
-  margin-top: 0.62rem;
-  border-top: 1px solid #18454c;
-  padding-top: 0.55rem;
+  margin: 0.52rem 0 0.75rem;
+  padding: 0.45rem 0.55rem;
+  background: #ffffff;
+  border: 1px solid #d8e5e7;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
+  width: fit-content;
 }
 .sidebar-logo {
-  max-width: 130px;
-  width: 74%;
+  max-width: 118px;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
