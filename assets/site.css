@@ -111,11 +111,16 @@ body {
 }
 .sidebar-logo-wrap {
   margin: 12px 0 0;
-  display: block;
-  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  background: #ffffff;
+  border: 1px solid #d7e2e4;
+  border-radius: 3px;
 }
 .sidebar-logo {
-  max-width: 140px;
+  max-width: 34px;
   width: auto;
   height: auto;
   display: block;
