@@ -38,11 +38,20 @@ function initSite(activePath) {
   const layout = document.querySelector(".layout");
   const toggle = document.getElementById("toggleNav");
   const sidebar = document.querySelector(".sidebar");
+  const content = document.querySelector(".content");
   if (!layout || !toggle || !sidebar) return;
 
-  // Keep nav toggle outside the collapsible rail so it remains usable in all states.
-  if (toggle.parentElement !== document.body) {
-    document.body.appendChild(toggle);
+  // Keep nav toggle in a dedicated top controls container (not floating).
+  if (content) {
+    let toggleBar = content.querySelector(".nav-toggle-bar");
+    if (!toggleBar) {
+      toggleBar = document.createElement("div");
+      toggleBar.className = "nav-toggle-bar";
+      content.insertBefore(toggleBar, content.firstChild);
+    }
+    if (toggle.parentElement !== toggleBar) {
+      toggleBar.appendChild(toggle);
+    }
   }
   const existingHeader = sidebar.querySelector("h1");
   const customerName =
@@ -125,10 +134,9 @@ function initSite(activePath) {
   });
 
   const currentIndex = pageFlow.findIndex(([href]) => href === activePath);
-  if (currentIndex !== -1) {
+  if (currentIndex !== -1 && content) {
     const prev = pageFlow[currentIndex - 1] || null;
     const next = pageFlow[currentIndex + 1] || null;
-    const content = document.querySelector(".content");
     const nav = document.createElement("nav");
     nav.className = "page-flow";
     nav.setAttribute("aria-label", "Page progression");
