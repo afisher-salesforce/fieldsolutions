@@ -114,15 +114,14 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 8px;
+  padding: 5px 9px;
   background: #ffffff;
   border: 1px solid #d7e2e4;
   border-radius: 3px;
 }
 .sidebar-logo {
-  max-width: 34px;
+  height: 20px;
   width: auto;
-  height: auto;
   display: block;
   object-fit: contain;
 }
