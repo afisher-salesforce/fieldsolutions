@@ -60,13 +60,18 @@ function initSite(activePath) {
   customerNameNode.classList.add("customer-name");
   customerNameNode.textContent = customerName;
 
-  // Enforce persistent Salesforce logo footer under final nav item.
+  // Place Salesforce logo directly under company/context lockup.
   let logoWrap = sidebar.querySelector(".sidebar-logo-wrap");
   if (!logoWrap) {
     logoWrap = document.createElement("div");
     logoWrap.className = "sidebar-logo-wrap";
     logoWrap.innerHTML = `<img class="sidebar-logo" src="${sidebarLogoPath}" alt="Salesforce logo" />`;
-    sidebar.appendChild(logoWrap);
+  }
+  const contextNode = customerNameNode.nextElementSibling;
+  if (contextNode && contextNode.tagName === "P") {
+    contextNode.insertAdjacentElement("afterend", logoWrap);
+  } else {
+    customerNameNode.insertAdjacentElement("afterend", logoWrap);
   }
 
   const setToggleState = (collapsed) => {
