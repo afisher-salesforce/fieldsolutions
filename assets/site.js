@@ -30,6 +30,7 @@ const pageFlow = [
   ["vignette-5.html", "5. The Connected Field"],
   ["capability-map.html", "Capability Map & Sequencing"],
   ["salesforce-domains.html", "Salesforce Capability Domains"],
+  ["enablement.html", "Enablement Pathways"],
   ["external-research.html", "External Research"],
   ["forward-looking.html", "Forward Looking Statement"]
 ];
