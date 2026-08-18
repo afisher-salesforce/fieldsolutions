@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
+import { useClerk, useUser } from '@clerk/react';
 import { navGroups } from '../data/navigation';
 import { capabilityIndex, type Capability } from '../data/capabilities';
-import { useLogout } from './AuthGate';
 
 export function Sidebar() {
   const [location] = useLocation();
   const [query, setQuery] = useState('');
-  const logout = useLogout();
+  const { signOut } = useClerk();
+  const { user } = useUser();
 
   const results: Capability[] = query.trim()
     ? capabilityIndex
@@ -78,11 +79,27 @@ export function Sidebar() {
         </div>
       ))}
 
-      {logout && (
-        <button className="logout-btn" onClick={logout}>
-          Logout
+      <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #1e293b' }}>
+        {user?.primaryEmailAddress?.emailAddress && (
+          <p style={{
+            fontSize: '0.75rem',
+            color: '#64748b',
+            padding: '0 0.75rem 0.5rem',
+            margin: 0,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+          }}>
+            {user.primaryEmailAddress.emailAddress}
+          </p>
+        )}
+        <button
+          className="logout-btn"
+          onClick={() => signOut({ redirectUrl: '/' })}
+        >
+          Sign Out
         </button>
-      )}
+      </div>
     </aside>
   );
 }

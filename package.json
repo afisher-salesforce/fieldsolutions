@@ -1,0 +1,17 @@
+{
+  "name": "siemens-fieldsolutions-heroku",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "cd react-app && npm install && npm run build",
+    "heroku-postbuild": "npm run build",
+    "start": "node react-app/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
